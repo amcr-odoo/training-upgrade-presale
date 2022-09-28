@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="presale_order_view_form" model="ir.ui.view">
+        <field name="name">presale.order.form</field>
+        <field name="model">x_presale_order</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="x_state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="x_name"/>
+                        <field name="x_state"/>
+                    </group>
+                    <notebook>
+                        <page string="Lines">
+                            <group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="presale_order_action" model="ir.actions.act_window">
+        <field name="name">Orders</field>
+        <field name="res_model">x_presale_order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

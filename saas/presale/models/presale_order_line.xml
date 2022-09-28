@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="model_x_presale_order_line" model="ir.model">
+        <field name="name">presale.order.line</field>
+        <field name="model">x_presale_order_line</field>
+    </record>
+
+    <record id="field_x_presale_order_line_price" model="ir.model.fields">
+        <field name="name">x_price</field>
+        <field name="ttype">float</field>
+        <field name="model_id" ref="presale.model_x_presale_order_line"/>
+        <field name="field_description">Presale order line price</field>
+        <field name="required" eval="True"/>
+    </record>
+
+    <record id="field_x_presale_order_line_product" model="ir.model.fields">
+        <field name="name">x_product_id</field>
+        <field name="ttype">many2one</field>
+        <field name="model_id" ref="presale.model_x_presale_order_line"/>
+        <field name="relation">product.product</field>
+        <field name="field_description">Presale order line product</field>
+        <field name="required" eval="True"/>
+    </record>
+
+    <record id="field_x_presale_order_line_qty" model="ir.model.fields">
+        <field name="name">x_qty</field>
+        <field name="ttype">integer</field>
+        <field name="model_id" ref="presale.model_x_presale_order_line"/>
+        <field name="field_description">Presale order line quantity</field>
+        <field name="required" eval="True"/>
+    </record>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="model_x_presale_order" model="ir.model">
+        <field name="name">presale.order</field>
+        <field name="model">x_presale_order</field>
+    </record>
+
+    <record id="field_x_presale_order_name" model="ir.model.fields">
+        <field name="name">x_name</field>
+        <field name="ttype">char</field>
+        <field name="model_id" ref="presale.model_x_presale_order"/>
+        <field name="field_description">Name</field>
+        <field name="required" eval="True"/>
+    </record>
+
+    <record id="field_x_presale_order_customer" model="ir.model.fields">
+        <field name="name">x_partner_id</field>
+        <field name="ttype">many2one</field>
+        <field name="model_id" ref="presale.model_x_presale_order"/>
+        <field name="relation">res.partner</field>
+        <field name="field_description">Customer</field>
+        <field name="required" eval="True"/>
+    </record>
+
+    <record id="field_x_presale_order_state" model="ir.model.fields">
+        <field name="name">x_state</field>
+        <field name="ttype">char</field>
+        <field name="model_id" ref="presale.model_x_presale_order"/>
+        <field name="field_description">Stage</field>
+        <field name="required" eval="True"/>
+    </record>
+
+    <record id="field_x_presale_order_order_line_ids" model="ir.model.fields">
+        <field name="name">x_order_lines_ids</field>
+        <field name="ttype">many2many</field>
+        <field name="model_id" ref="presale.model_x_presale_order"/>
+        <field name="relation">x_presale_order_line</field>
+        <field name="field_description">Lines</field>
+    </record>
+</odoo>
